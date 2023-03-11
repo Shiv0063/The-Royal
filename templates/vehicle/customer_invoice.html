@@ -1,0 +1,74 @@
+{% extends 'vehicle/customerbase.html' %}
+{% block content %}
+
+<br>
+
+	<div class="content-header">
+		<div class="container-fluid">
+		  <div class="row mb-2">
+			<div class="col-sm-6">
+			  
+			</div><!-- /.col -->
+			<div class="col-sm-6">
+			  <ol class="breadcrumb float-sm-right">
+				<li class="breadcrumb-item"><a href="/customer-dashboard">Home</a></li>
+				<li class="breadcrumb-item active">Invoice</li>
+			  </ol>
+			</div><!-- /.col -->
+		  </div><!-- /.row -->
+		</div><!-- /.container-fluid -->
+	  </div>
+	<div class="wrapper">
+
+<div class="row" style="background: #000;">
+	<div class="col-12">
+	  <div class="card" style="background: #000;">
+		<div class="card-header">
+		  <h3 class="card-title">Approved Request With Cost</h3>
+
+		  <div class="card-tools">
+			<div class="input-group input-group-sm" style="width: 150px;">
+			  <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+			  <div class="input-group-append">
+				<button type="submit" class="btn btn-default">
+				  <i class="fas fa-search"></i>
+				</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="card-body table-responsive p-0" style="height: 300px;">
+		  <table class="table table-head-fixed text-nowrap" style="background: #000;">
+			<thead>
+			  <tr>
+				<th style="background:#000;">Vehicle Name</th>
+                  <th style="background:#000;">Vehicle Number</th>
+                  <th style="background:#000;">Problem Description</th>
+                  <th style="background:#000;">Enquiry Date</th>
+				  <th style="background:#000;">Total Cost</th>
+			  </tr>
+			</thead>
+			<tbody>
+				{% for enq in enquiries %}
+                <tr>
+                  <td>{{enq.vehicle_name}}</td>
+                  <td>{{enq.vehicle_no}}</td>
+                  <td>{{enq.problem_description}}</td>
+                  <td>{{enq.date}}</td>
+                  <td>{{enq.cost}}</td>
+                </tr>
+                {% endfor %}
+			</tbody>
+		  </table>
+		</div>
+	  </div>
+	</div>
+  </div>
+	</div>
+	<style>
+		th{
+			background: #000;
+		}
+	</style>
+{% endblock content %}

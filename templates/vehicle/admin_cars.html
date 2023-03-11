@@ -1,0 +1,55 @@
+{% extends 'vehicle/adminbase.html' %}
+{% load static %}
+{% block content %}
+
+<div class="content-header">
+	<div class="container-fluid">
+		<div class="row mb-2">
+			<div class="col-sm-6">
+
+			</div><!-- /.col -->
+			<div class="col-sm-6">
+				<ol class="breadcrumb float-sm-right">
+					<li class="breadcrumb-item"><a href="/customer-dashboard">Home</a></li>
+					<li class="breadcrumb-item active">Cars</li>
+				</ol>
+			</div><!-- /.col -->
+		</div><!-- /.row -->
+	</div><!-- /.container-fluid -->
+</div>
+
+<div class="row">
+    <div class="col-lg-3 col-6">
+      <!-- small card -->
+      <div class="small-box bg-info">
+        <div class="inner">
+          <h3></h3>
+          <h5>View All Cars</h5>
+        </div>
+        <div class="icon">
+          <i class="fas fa-eye f-left"></i>
+        </div>
+        <a href="/admin-view-cars" class="small-box-footer">
+          More info <i class="fas fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
+      <!-- small card -->
+      <div class="small-box bg-success">
+        <div class="inner">
+          <h3></h3>
+          <h5>Add Cars</h5>
+        </div>
+        <div class="icon">
+          <i class="fas fa-plus-circle f-left"></i>
+        </div>
+        <a href="/admin-add-cars" class="small-box-footer">
+          More info <i class="fas fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+{% endblock content %}

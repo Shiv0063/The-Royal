@@ -1,0 +1,126 @@
+{% extends 'vehicle/adminbase.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<head>
+
+  <style type="text/css">
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      color: white;
+      font-size: 0.90em;
+    }
+
+    .order-card {
+      color: #fff;
+    }
+
+    .bg-c-blue {
+      background: linear-gradient(45deg, #4099ff, #73b4ff);
+    }
+
+    .bg-c-green {
+      background: linear-gradient(45deg, #2ed8b6, #59e0c5);
+    }
+
+    .bg-c-yellow {
+      background: linear-gradient(45deg, #FFB64D, #ffcb80);
+    }
+
+    .bg-c-pink {
+      background: linear-gradient(45deg, #FF5370, #ff869a);
+    }
+
+
+    .card {
+      border-radius: 5px;
+      -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      border: none;
+      margin-bottom: 30px;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card .card-block {
+      padding: 25px;
+    }
+
+    .order-card i {
+      font-size: 26px;
+    }
+
+    .f-left {
+      float: left;
+    }
+
+    .f-right {
+      float: right;
+    }
+    h6{
+      size:20;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+  
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/customer-dashboard">Home</a></li>
+            <li class="breadcrumb-item active">Customers</li>
+            <li class="breadcrumb-item active">Mechanic Attendance</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+
+  <div class="row">
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
+      <!-- small card -->
+      <div class="small-box bg-danger">
+        <div class="inner">
+          <h3></h3>
+  
+          <h5>View Mechanic Attendance</h5>
+        </div>
+        <div class="icon">
+          <i class="fas fa-eye f-left"></i>
+        </div>
+        <a href="/admin-view-attendance" class="small-box-footer">
+          More info <i class="fas fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
+      <!-- small card -->
+      <div class="small-box bg-purple">
+        <div class="inner">
+          <h3></h3>
+  
+          <h5>Take Mechanic Attendance</h5>
+        </div>
+        <div class="icon">
+          <i class="fas fa-plus-circle f-left"></i>
+        </div>
+        <a href="/admin-take-attendance" class="small-box-footer">
+          More info <i class="fas fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock content %}

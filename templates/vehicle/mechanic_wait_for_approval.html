@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+
+
+<style media="screen">
+  .jumbotron {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .jumbotron h1 {
+    text-align: center;
+  }
+
+  .alert {
+    margin: 0px;
+  }
+</style>
+
+<body>
+  {% include "vehicle/navbar.html" %}
+
+  <div class="container">
+    <div class="row mt-5 justify-content-center"><br><br>
+      <div class="col-12 mt-5">
+        <h1 class="display-4 text-center mb-5">Hello {{request.user.first_name}}</h1>
+      </div>
+      <div class="col-12">
+        <div class="jumbotron" style="margin-top: 0px;
+        margin-bottom: 0px;">
+        
+        <p class="lead text-center">Your Account is not approved till now <br><br>Our Team is checking your profile <br><br> Soon you will be hired to our Agency</p>
+        <hr class="my-4">
+      </div>
+      <div class="col-12">
+        <p class="text-center">Check Later</p>
+        <p class="lead text-center">
+          <a class="btn btn-primary btn-lg" href="/logout" role="button">Logout</a>
+        </p>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{% extends 'vehicle/adminbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<br><br><br><br><br>
+<h3 style="text-align:center;">Update SALARY AS PER SKILL & APPROVE</h3>
+<div>
+  <form method="post" style="margin-left:200px;margin-right:200px;">
+      {% csrf_token %}
+
+    <label for="salary">Salary</label>
+    {% render_field mechanicSalary.salary class="form-control" placeholder="salary" %}
+
+
+    <input type="submit" value="Approve">
+  </form>
+</div>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock content %}

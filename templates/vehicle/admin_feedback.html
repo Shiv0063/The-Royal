@@ -1,0 +1,44 @@
+{% extends 'vehicle/adminbase.html' %}
+
+{% block content %}
+
+<div class="content-header">
+	<div class="container-fluid">
+		<div class="row mb-2">
+			<div class="col-sm-6">
+
+			</div><!-- /.col -->
+			<div class="col-sm-6">
+				<ol class="breadcrumb float-sm-right">
+					<li class="breadcrumb-item"><a href="/customer-dashboard">Home</a></li>
+					<li class="breadcrumb-item active">Feedback</li>
+				</ol>
+			</div><!-- /.col -->
+		</div><!-- /.row -->
+	</div><!-- /.container-fluid -->
+</div>
+<section class="content">
+  <div class="row">
+    {%for f in feedback%}
+      <div class="col-12" id="accordion">
+          <div class="card card-primary card-outline">
+              <a class="d-block w-100" data-toggle="collapse" href="#collapseOne">
+                  <div class="card-header">
+                      <h4 class="card-title w-100">
+                        {{f.date}} ||By :{{f.by}}
+                      </h4>
+                  </div>
+              </a>
+              <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                  <div class="card-body">
+                    {{f.message}}
+                  </div>
+              </div>
+          </div>
+      </div>
+    
+{%endfor%}  
+  </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,98 @@
+{% extends 'vehicle/customerbase.html' %}
+{% load static %}
+{% block content %}
+
+	<!-- main content -->
+
+
+	<div class="content-header" style="background: #000;">
+		<div class="container-fluid">
+		  <div class="row mb-2">
+			<div class="col-sm-6">
+			  
+			</div><!-- /.col -->
+			<div class="col-sm-6">
+			  <ol class="breadcrumb float-sm-right">
+				<li class="breadcrumb-item"><a href="/customer-dashboard">Home</a></li>
+				<li class="breadcrumb-item active">Dashboard</li>
+			  </ol>
+			</div><!-- /.col -->
+		  </div><!-- /.row -->
+		</div><!-- /.container-fluid -->
+	  </div>
+	<div class="wrapper" style="background: #000;">
+
+<!-- ****** cards start ********** -->
+		<section class="content">
+			<div class="container-fluid">
+			  <!-- Info boxes -->
+			  <div class="row">
+				<div class="col-12 col-sm-6 col-md-3">
+				  <div class="info-box" style="background: #000;">
+					<span class="info-box-icon bg-info elevation-1"><i class="fas fa-tasks"></i></span>
+					<div class="info-box-content">
+					  <span class="info-box-text">New Request Made</span>
+					  <span class="info-box-number">
+						{{new_request_made}}
+					  </span>
+					</div>
+					<!-- /.info-box-content -->
+				  </div>
+				  <!-- /.info-box -->
+				</div>
+				<!-- /.col -->
+				<div class="col-12 col-sm-6 col-md-3">
+				  <div class="info-box mb-3" style="background: #000;">
+					<span class="info-box-icon bg-danger elevation-1"><i class="fas fa-spinner"></i></span>
+	  
+					<div class="info-box-content">
+					  <span class="info-box-text">Vehicle Repair In Progress</span>
+					  <span class="info-box-number">{{work_in_progress}}</span>
+					</div>
+					<!-- /.info-box-content -->
+				  </div>
+				  <!-- /.info-box -->
+				</div>
+				<!-- /.col -->
+	  
+				<!-- fix for small devices only -->
+				<div class="clearfix hidden-md-up"></div>
+	  
+				<div class="col-12 col-sm-6 col-md-3">
+				  <div class="info-box mb-3" style="background: #000;">
+					<span class="info-box-icon bg-success elevation-1"><i class="fas fa-check-circle"></i></span>
+	  
+					<div class="info-box-content">
+					  <span class="info-box-text">Vehicle Repaired</span>
+					  <span class="info-box-number">{{work_completed}}</span>
+					</div>
+					<!-- /.info-box-content -->
+				  </div>
+				  <!-- /.info-box -->
+				</div>
+				<!-- /.col -->
+				<div class="col-12 col-sm-6 col-md-3">
+				  <div class="info-box mb-3" style="background: #000;">
+					<span class="info-box-icon bg-warning elevation-1"><i class=" fas fa-rupee-sign"></i></span>
+	  
+					<div class="info-box-content">
+					  <span class="info-box-text">Total Bill</span>
+					  <span class="info-box-number">{{bill}}</span>
+					</div>
+					<!-- /.info-box-content -->
+				  </div>
+				  <!-- /.info-box -->
+				</div>
+				<!-- /.col -->
+			  </div>
+			</div><!--/. container-fluid -->
+			<!-- <div class="content">
+  
+		  </div> -->
+		  </section>
+
+<!-- ****** cards end ********** -->
+
+	</div>
+	<!-- end main content -->
+{% endblock content %}

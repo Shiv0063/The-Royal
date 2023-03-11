@@ -1,0 +1,53 @@
+{% extends 'vehicle/mechanicbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+
+</head>
+
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+    <div class="col-sm-6">
+      
+    </div><!-- /.col -->
+    <div class="col-sm-6">
+      <ol class="breadcrumb float-sm-right">
+      <li class="breadcrumb-item"><a href="/customer-dashboard">Home</a></li>
+      <li class="breadcrumb-item active">Feedback</li>
+      </ol>
+    </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+  </div>
+<h3 style="text-align:center;">Send Feedback To Admin</h3>
+<div class="">
+  <!-- Main content -->
+  <section class="content">
+    <div class="card" style="background:#000;">
+      <div class="card-body row justify-content-center">
+       
+        <div class="col-6">
+          <form method="post">
+            {% csrf_token %}
+          <div class="form-group">
+            <label for="inputName">Name</label>
+            {% render_field feedback.by class="form-control"  %}
+          </div>
+          <div class="form-group">
+            <label for="inputMessage">Message</label>
+            {% render_field feedback.message class="form-control"  %}
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-info" value="Send">
+            <!-- <input type="submit"  value="Send message"> -->
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- /.content -->
+</div>
+{% endblock content %}

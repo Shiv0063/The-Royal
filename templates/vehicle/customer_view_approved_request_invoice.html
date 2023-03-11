@@ -1,0 +1,78 @@
+{% extends 'vehicle/customerbase.html' %}
+{% block content %}
+
+<div class="content-header">
+	<div class="container-fluid">
+	  <div class="row mb-2">
+		<div class="col-sm-6">
+		  
+		</div><!-- /.col -->
+		<div class="col-sm-6">
+		  <ol class="breadcrumb float-sm-right">
+			<li class="breadcrumb-item active"><a href="/customer-dashboard">Home</a></li>
+			<li class="breadcrumb-item active">Request</li>
+			<li class="breadcrumb-item ">Approved Request Invoice</li>
+		  </ol>
+		</div><!-- /.col -->
+	  </div><!-- /.row -->
+	</div><!-- /.container-fluid -->
+  </div>
+	<!-- main content -->
+	<div class="wrapper">
+
+<!-- ****** table  start ********** -->
+<div class="row">
+	<div class="col-12">
+	  <div class="card" style="background:#000;">
+		<div class="card-header">
+		  <h3 class="card-title">Approved Request Invoice</h3>
+
+		  <div class="card-tools">
+			<div class="input-group input-group-sm" style="width: 150px;">
+			  <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+			  <div class="input-group-append">
+				<button type="submit" class="btn btn-default">
+				  <i class="fas fa-search"></i>
+				</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<!-- /.card-header -->
+		<div class="card-body table-responsive p-0" style="height: 300px;">
+		  <table class="table table-head-fixed text-nowrap">
+			<thead>
+			  <tr>
+				<th style="background:#000;">Vehicle Name</th>
+
+                  <th style="background:#000;">Vehicle Number</th>
+
+                  <th style="background:#000;">Enquiry Date</th>
+                  <th style="background:#000;">Status</th>
+                  <th style="background:#000;">Cost</th>
+			  </tr>
+			</thead>
+			<tbody>
+				{% for enq in enquiries %}
+                <tr>
+                  <td>{{enq.vehicle_name}}</td>
+
+                  <td>{{enq.vehicle_no}}</td>
+
+                  <td>{{enq.date}}</td>
+                  <td>{{enq.status}}</td>
+                  <td>{{enq.cost}}</td>
+                  </tr>
+                {% endfor %}
+			</tbody>
+		  </table>
+		</div>
+		<!-- /.card-body -->
+	  </div>
+	  <!-- /.card -->
+	</div>
+  </div>
+	</div>
+	<!-- end main content -->
+{% endblock content %}

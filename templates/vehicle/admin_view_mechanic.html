@@ -1,0 +1,79 @@
+{% extends 'vehicle/adminbase.html' %}
+{% block content %}
+{% load static %}
+
+<div class="content-header">
+	<div class="container-fluid">
+		<div class="row mb-2">
+			<div class="col-sm-6">
+
+			</div><!-- /.col -->
+			<div class="col-sm-6">
+				<ol class="breadcrumb float-sm-right">
+					<li class="breadcrumb-item"><a href="/customer-dashboard">Home</a></li>
+					<li class="breadcrumb-item active">Customers</li>
+					<li class="breadcrumb-item active">View All Mechanic
+					</li>
+				</ol>
+			</div><!-- /.col -->
+		</div><!-- /.row -->
+	</div><!-- /.container-fluid -->
+</div>
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-header">
+				<h3 class="card-title">Mechanics</h3>
+
+				<div class="card-tools">
+					<div class="input-group input-group-sm" style="width: 150px;">
+						<input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+						<div class="input-group-append">
+							<button type="submit" class="btn btn-default">
+								<i class="fas fa-search"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-body table-responsive p-0" style="height: 300px;">
+				<table class="table table-head-fixed text-nowrap">
+					<thead>
+						<tr>
+              <th>Name</th>
+              <th>Profile Picture</th>
+              <th>Mobile</th>
+              <th>Address</th>
+              <th>Skills</th>
+              <th>Salary</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+					</thead>
+					<tbody>
+            {% for m in mechanics %}
+                <tr>
+                  <td> {{m.get_name}}</td>
+                  <td> <img src="{% static m.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
+                  <td>{{m.mobile}}</td>
+                  <td>{{m.address}}</td>
+                  <td>{{m.skill}}</td>
+                  <td>{{m.salary}}</td>
+                  <!-- <td><a  style="color:red; text-decoration:none;font-size:25px;" href="{% url 'update-mechanic' m.id  %}">&#9998;</a></td> -->
+                  <!-- <td><a style="color:blue; text-decoration:none;font-size:25px;"href="{% url 'delete-mechanic' m.id  %}">&#10008;</a></td> -->
+                  <td><a class="" href="{% url 'update-mechanic' m.id  %}"><i
+										class="nav-icon far fa-circle text-success"></i></a></td>
+							<td><a href="{% url 'delete-mechanic' m.id  %}"><i
+										class="nav-icon far fa-circle text-danger"></i></a></td>
+						</tr>
+              
+                {% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}

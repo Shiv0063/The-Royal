@@ -1,0 +1,92 @@
+{% extends 'vehicle/mechanicbase.html' %}
+{% block content %}
+{% load static %}
+	<!-- main content -->
+	<div class="content-header">
+		<div class="container-fluid">
+		  <div class="row mb-2">
+			<div class="col-sm-6">
+			  
+			</div><!-- /.col -->
+			<div class="col-sm-6">
+			  <ol class="breadcrumb float-sm-right">
+				<li class="breadcrumb-item"><a href="/customer-dashboard">Home</a></li>
+				<li class="breadcrumb-item active">Salary</li>
+			  </ol>
+			</div><!-- /.col -->
+		  </div><!-- /.row -->
+		</div><!-- /.container-fluid -->
+	  </div>
+	<div class="wrapper">
+		<section class="content">
+			<div class="container-fluid">
+			  <!-- Info boxes -->
+			  <div class="row">
+				<div class="col-12 col-sm-6 col-md-3">
+				  <div class="info-box mb-3" style="background: #000; border: #444 solid 2px;">
+					<span class="info-box-icon bg-warning elevation-1"><i class=" fas fa-rupee-sign"></i></span>
+	  
+					<div class="info-box-content">
+					  <span class="info-box-text">Your Salary</span>
+					  <span class="info-box-number">{{mechanic.salary}}</span>
+					</div>
+					<!-- /.info-box-content -->
+				  </div>
+				  <!-- /.info-box -->
+				</div>
+				<!-- /.col -->
+			  </div>
+			</div><!--/. container-fluid -->
+			<!-- <div class="content">
+	
+		  </div> -->
+		  </section>
+<div class="row">
+	<div class="col-12">
+	  <div class="card" style="background: #000;">
+		<div class="card-header" style="background: #000;">
+		  <h3 class="card-title">Vehicles You Have Repaired</h3>
+
+		  <div class="card-tools">
+			<div class="input-group input-group-sm" style="width: 150px;">
+			  <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+			  <div class="input-group-append">
+				<button type="submit" class="btn btn-default">
+				  <i class="fas fa-search"></i>
+				</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="card-body table-responsive p-0" style="height: 300px; background: #000;">
+		  <table class="table table-head-fixed text-nowrap"> 
+			<thead style="background: #000;">
+				<tr>
+					<th style="background:#000;">Vehicle Name</th>
+  
+					<th style="background:#000;">Number</th>
+  
+					<th style="background:#000;">Problem Description</th>
+  
+				  </tr>
+			</thead>
+			<tbody>
+				{% for w in workdone %}
+                <tr>
+                  <td> {{w.vehicle_name}}</td>
+
+                  <td> {{w.vehicle_no}}</td>
+
+                  <td> {{w.problem_description}}</td>
+                    </tr>
+                {% endfor %}
+			</tbody>
+		  </table>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+	<!-- end main content -->
+{% endblock content %}

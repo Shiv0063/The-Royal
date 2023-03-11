@@ -1,0 +1,157 @@
+{% extends 'vehicle/adminbase.html' %}
+{% load static %}
+{% block content %}
+
+<div class="content-header">
+	<div class="container-fluid">
+		<div class="row mb-2">
+			<div class="col-sm-6">
+
+			</div><!-- /.col -->
+			<div class="col-sm-6">
+				<ol class="breadcrumb float-sm-right">
+					<li class="breadcrumb-item"><a href="/customer-dashboard">Home</a></li>
+					<li class="breadcrumb-item active">Dashboard</li>
+				</ol>
+			</div><!-- /.col -->
+		</div><!-- /.row -->
+	</div><!-- /.container-fluid -->
+</div>
+<div class="wrapper">
+
+	<!-- ****** cards start ********** -->
+	<section class="content">
+		<div class="container-fluid">
+			<!-- Info boxes -->
+			<div class="row">
+				<div class="col-12 col-sm-6 col-md-3">
+					<div class="info-box">
+						<span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+
+						<div class="info-box-content">
+							<span class="info-box-text">Total Customer</span>
+							<span class="info-box-number">
+								{{total_customer}}
+							</span>
+						</div>
+						<!-- /.info-box-content -->
+					</div>
+					<!-- /.info-box -->
+				</div>
+				<!-- /.col -->
+				<div class="col-12 col-sm-6 col-md-3">
+					<div class="info-box mb-3">
+						<span class="info-box-icon bg-danger elevation-1"><i class="fas fa-hat-cowboy"></i></span>
+
+						<div class="info-box-content">
+							<span class="info-box-text">Total Mechanic</span>
+							<span class="info-box-number">{{total_mechanic}}</span>
+						</div>
+						<!-- /.info-box-content -->
+					</div>
+					<!-- /.info-box -->
+				</div>
+				<!-- /.col -->
+
+				<!-- fix for small devices only -->
+				<div class="clearfix hidden-md-up"></div>
+
+				<div class="col-12 col-sm-6 col-md-3">
+					<div class="info-box mb-3">
+						<span class="info-box-icon bg-success elevation-1"><i class="fas fa-spinner"></i></span>
+
+						<div class="info-box-content">
+							<span class="info-box-text">Total Enquiry</span>
+							<span class="info-box-number">{{total_request}}</span>
+						</div>
+						<!-- /.info-box-content -->
+					</div>
+					<!-- /.info-box -->
+				</div>
+				<!-- /.col -->
+				<div class="col-12 col-sm-6 col-md-3">
+					<div class="info-box mb-3">
+						<span class="info-box-icon bg-warning elevation-1"><i class="fas fa-comments"></i></span>
+
+						<div class="info-box-content">
+							<span class="info-box-text">Total Feedback</span>
+							<span class="info-box-number">{{total_feedback}}</span>
+						</div>
+						<!-- /.info-box-content -->
+					</div>
+					<!-- /.info-box -->
+				</div>
+				<div class="col-12 col-sm-6 col-md-3">
+					<div class="info-box">
+						<span class="info-box-icon bg-purple elevation-1"><i class="fas fa-car"></i></span>
+
+						<div class="info-box-content">
+							<span class="info-box-text">Total Cars</span>
+							<span class="info-box-number">
+								{{total_cars}}
+							</span>
+						</div>
+						<!-- /.info-box-content -->
+					</div>
+					<!-- /.info-box -->
+				</div>
+				<!-- /.col -->
+			</div>
+		</div><!--/. container-fluid -->
+		<!-- <div class="content">
+
+	  </div> -->
+	</section>
+
+	<!-- ****** cards end ********** -->
+
+</div>
+
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-header">
+				<h3 class="card-title">Recent Enquiry By Customer</h3>
+
+				<div class="card-tools">
+					<div class="input-group input-group-sm" style="width: 150px;">
+						<input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+						<div class="input-group-append">
+							<button type="submit" class="btn btn-default">
+								<i class="fas fa-search"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-body table-responsive p-0" style="height: 300px;">
+				<table class="table table-head-fixed text-nowrap">
+					<thead>
+						<tr>
+							<th>Customer Name</th>
+							<th>Vehicle Name</th>
+							<th>Category</th>
+							<th>Vehicle Model</th>
+							<th>Vehicle Brand</th>
+							<th>Problem Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for c,r in data %}
+						<tr>
+							<td> {{c.get_name}}</td>
+							<td> {{r.vehicle_name}}</td>
+							<td>{{r.category}}</td>
+							<td>{{r.vehicle_model}}</td>
+							<td>{{r.vehicle_brand}}</td>
+							<td>{{r.problem_description}}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}

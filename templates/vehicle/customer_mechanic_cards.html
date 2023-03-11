@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body style="background: hsl(283deg 89% 7%);" class="mt-5">
+  <div class="container mt-5">
+    <!-- Card deck -->
+    <div class="card-deck row justify-content-center">
+    
+      <div class="col-10 col-sm-6 col-md-3">
+      <!-- Card -->
+      <div class="card">
+        <a class="btn" href="customersignup" role="button">
+        <!--Card image-->
+        <div class="view overlay bg-dark">
+          <img class="card-img-top" src="{% static 'images/admin.png' %}" alt="Card image cap">
+        </div>
+
+        <div class="">
+          <h4 class="mt-2 card-title text-center">Customer</h4>
+        </div>
+      </a>
+      </div>
+      <!-- Card -->
+      </div>
+    
+      <div class="col-10 col-sm-6 col-md-3">
+      <!-- Card -->
+      <div class="card">
+        <a class="btn" href="mechanicsignup" role="button">
+        <!--Card image-->
+        <div class="view overlay">
+          <img class="card-img-top border border-1 p-1 border-dark" src="{% static 'images/mechanic.png' %}" alt="Card image cap">
+        </div>
+        <div class="">
+          <h4 class="mt-2 card-title text-center">Mechanic</h4>
+        </div>  
+        </a>
+    
+      </div>
+      <!-- Card -->
+    </div>
+     
+      
+    </div>
+    <!-- Card deck -->
+      
+    </div>
+
+</body>
+
+</html>
